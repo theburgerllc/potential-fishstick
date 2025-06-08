@@ -92,9 +92,9 @@ export default function Navbar() {
         }
 
         .navbar.scrolled {
-          background: rgba(255, 255, 255, 0.1);
-          border-bottom: 1px solid var(--border-light);
-          box-shadow: var(--shadow-md);
+          background: transparent;
+          border-bottom: 1px solid transparent;
+          box-shadow: none;
         }
 
         :global(.dark) .navbar {
@@ -103,8 +103,8 @@ export default function Navbar() {
         }
 
         :global(.dark) .navbar.scrolled {
-          background: rgba(0, 0, 0, 0.1);
-          border-bottom: 1px solid var(--border-light);
+          background: transparent;
+          border-bottom: 1px solid transparent;
         }
 
         .nav-content {

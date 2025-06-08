@@ -173,9 +173,10 @@ export default function Hero() {
 
         .hero-image-container {
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -184,11 +185,13 @@ export default function Hero() {
         }
 
         .hero-image {
-          width: 250px;
-          height: 250px;
+          width: 100%;
+          height: 100%;
+          max-width: 800px;
+          max-height: 600px;
           object-fit: contain;
-          opacity: 0.3;
-          filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+          opacity: 0.1;
+          filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.05));
           transition: var(--transition-medium);
         }
 
@@ -197,18 +200,20 @@ export default function Hero() {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 300px;
-          height: 300px;
+          width: 100%;
+          height: 100%;
+          max-width: 600px;
+          max-height: 400px;
           background: radial-gradient(
-            circle,
+            ellipse,
             var(--primary) 0%,
             var(--secondary) 30%,
             var(--accent) 60%,
             transparent 70%
           );
-          opacity: 0.1;
+          opacity: 0.05;
           border-radius: 50%;
-          filter: blur(30px);
+          filter: blur(50px);
           animation: pulse 4s ease-in-out infinite alternate;
           z-index: 0;
         }
@@ -310,13 +315,13 @@ export default function Hero() {
           }
 
           .hero-image {
-            width: 300px;
-            height: 300px;
+            max-width: 900px;
+            max-height: 700px;
           }
 
           .hero-image-glow {
-            width: 350px;
-            height: 350px;
+            max-width: 700px;
+            max-height: 500px;
           }
         }
 
@@ -343,13 +348,13 @@ export default function Hero() {
           }
 
           .hero-image {
-            width: 350px;
-            height: 350px;
+            max-width: 1000px;
+            max-height: 800px;
           }
 
           .hero-image-glow {
-            width: 400px;
-            height: 400px;
+            max-width: 800px;
+            max-height: 600px;
           }
         }
 
@@ -369,13 +374,13 @@ export default function Hero() {
           }
 
           .hero-image {
-            width: 150px;
-            height: 150px;
+            max-width: 600px;
+            max-height: 400px;
           }
 
           .hero-image-glow {
-            width: 200px;
-            height: 200px;
+            max-width: 400px;
+            max-height: 300px;
           }
 
           .hero-visual {
