@@ -34,6 +34,14 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-visual">
+          <div className="hero-image-container">
+            <img 
+              src="/favicon.png" 
+              alt="Burger Consulting LLC" 
+              className="hero-image"
+            />
+            <div className="hero-image-glow"></div>
+          </div>
           <div className="floating-card card-1">
             <div className="card-content">
               <h4>AI Automation</h4>
@@ -156,8 +164,53 @@ export default function Hero() {
 
         .hero-visual {
           position: relative;
-          height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 400px;
           margin-top: var(--space-2xl);
+        }
+
+        .hero-image-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: heroFloat 6s ease-in-out infinite;
+          z-index: 1;
+        }
+
+        .hero-image {
+          width: 250px;
+          height: 250px;
+          object-fit: contain;
+          opacity: 0.3;
+          filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+          transition: var(--transition-medium);
+        }
+
+        .hero-image-glow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(
+            circle,
+            var(--primary) 0%,
+            var(--secondary) 30%,
+            var(--accent) 60%,
+            transparent 70%
+          );
+          opacity: 0.1;
+          border-radius: 50%;
+          filter: blur(30px);
+          animation: pulse 4s ease-in-out infinite alternate;
+          z-index: 0;
         }
 
         .floating-card {
@@ -167,6 +220,7 @@ export default function Hero() {
           box-shadow: var(--shadow-xl);
           transition: var(--transition-medium);
           animation: float 6s ease-in-out infinite;
+          z-index: 10;
         }
 
         .floating-card:hover {
@@ -220,6 +274,26 @@ export default function Hero() {
           }
         }
 
+        @keyframes heroFloat {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0.2;
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 0.1;
+          }
+        }
+
         @media (min-width: 768px) {
           .hero-title {
             font-size: var(--font-size-6xl);
@@ -235,8 +309,14 @@ export default function Hero() {
             gap: var(--space-2xl);
           }
 
-          .hero-visual {
-            display: block;
+          .hero-image {
+            width: 300px;
+            height: 300px;
+          }
+
+          .hero-image-glow {
+            width: 350px;
+            height: 350px;
           }
         }
 
@@ -261,13 +341,19 @@ export default function Hero() {
           .trust-points {
             justify-content: flex-start;
           }
+
+          .hero-image {
+            width: 350px;
+            height: 350px;
+          }
+
+          .hero-image-glow {
+            width: 400px;
+            height: 400px;
+          }
         }
 
         @media (max-width: 767px) {
-          .hero-visual {
-            display: none;
-          }
-
           .hero-title {
             font-size: var(--font-size-3xl);
           }
@@ -280,6 +366,21 @@ export default function Hero() {
           .hero-actions a {
             width: 100%;
             max-width: 300px;
+          }
+
+          .hero-image {
+            width: 150px;
+            height: 150px;
+          }
+
+          .hero-image-glow {
+            width: 200px;
+            height: 200px;
+          }
+
+          .hero-visual {
+            min-height: 250px;
+            margin-top: var(--space-xl);
           }
         }
       `}</style>
