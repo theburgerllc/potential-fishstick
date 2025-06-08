@@ -1,71 +1,36 @@
-import { useCallback, useEffect, useState } from 'react'
-import Button from '../components/Button'
-import ClickCount from '../components/ClickCount'
-import styles from '../styles/home.module.css'
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import Clients from '../components/Clients';
+import ContactForm from '../components/ContactForm';
+import Footer from '../components/Footer';
 
-function throwError() {
-  console.log(
-    // The function body() is not defined
-    document.body()
-  )
-}
-
-function Home() {
-  const [count, setCount] = useState(0)
-  const increment = useCallback(() => {
-    setCount((v) => v + 1)
-  }, [setCount])
-
-  useEffect(() => {
-    const r = setInterval(() => {
-      increment()
-    }, 1000)
-
-    return () => {
-      clearInterval(r)
-    }
-  }, [increment])
-
+export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1>Fast Refresh Demo</h1>
-      <p>
-        Fast Refresh is a Next.js feature that gives you instantaneous feedback
-        on edits made to your React components, without ever losing component
-        state.
-      </p>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          Auto incrementing value. The counter won't reset after edits or if
-          there are errors.
-        </p>
-        <p>Current value: {count}</p>
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>Component with state.</p>
-        <ClickCount />
-      </div>
-      <hr className={styles.hr} />
-      <div>
-        <p>
-          The button below will throw 2 errors. You'll see the error overlay to
-          let you know about the errors but it won't break the page or reset
-          your state.
-        </p>
-        <Button
-          onClick={(e) => {
-            setTimeout(() => document.parentNode(), 0)
-            throwError()
-          }}
-        >
-          Throw an Error
-        </Button>
-      </div>
-      <hr className={styles.hr} />
-    </main>
-  )
-}
+    <>
+      <Head>
+        <title>Burger Consulting LLC - Where AI Meets NYC Hustle</title>
+        <meta name="description" content="15 years shaping global retail. 5 years engineering AI breakthroughs. Your competitive edge—designed and delivered from New York." />
+        <meta name="keywords" content="AI consulting, business automation, AI solutions, New York, machine learning, process optimization" />
+        <meta property="og:title" content="Burger Consulting LLC - Where AI Meets NYC Hustle" />
+        <meta property="og:description" content="Transform your business with practical AI solutions. From automation to optimization, we deliver results that matter." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://burgerconsulting.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Burger Consulting LLC - Where AI Meets NYC Hustle" />
+        <meta name="twitter:description" content="Transform your business with practical AI solutions." />
+        <link rel="canonical" href="https://burgerconsulting.com" />
+      </Head>
 
-export default Home
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Clients />
+        <ContactForm />
+      </main>
+      <Footer />
+    </>
+  );
+}
