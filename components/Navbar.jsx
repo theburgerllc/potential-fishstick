@@ -46,9 +46,6 @@ export default function Navbar() {
 
           <div className="nav-actions">
             <ThemeToggle />
-            <Link href="/contact" className="btn-primary cta-btn">
-              Book Free Call
-            </Link>
             <button 
               className="mobile-menu-btn"
               onClick={() => setIsOpen(!isOpen)}
@@ -126,9 +123,9 @@ export default function Navbar() {
         }
 
         .logo-image {
-          height: 40px;
+          height: 66px;
           width: auto;
-          max-width: 200px;
+          max-width: 330px;
           object-fit: contain;
         }
 
@@ -172,9 +169,6 @@ export default function Navbar() {
           gap: var(--space-md);
         }
 
-        .cta-btn {
-          display: none;
-        }
 
         .mobile-menu-btn {
           display: flex;
@@ -238,14 +232,18 @@ export default function Navbar() {
           width: 100%;
         }
 
+        @media (max-width: 767px) {
+          .logo-image {
+            height: 50px;
+            max-width: 242px;
+          }
+        }
+
         @media (min-width: 768px) {
           .nav-links.desktop {
             display: flex;
           }
 
-          .cta-btn {
-            display: inline-block;
-          }
 
           .mobile-menu-btn {
             display: none;
@@ -253,6 +251,11 @@ export default function Navbar() {
 
           .mobile-menu {
             display: none;
+          }
+
+          .logo-image {
+            height: 72px;
+            max-width: 352px;
           }
         }
       `}</style>

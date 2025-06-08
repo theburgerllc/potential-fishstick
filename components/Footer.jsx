@@ -156,9 +156,9 @@ export default function Footer() {
         }
 
         .footer-logo-image {
-          height: 50px;
+          height: 80px;
           width: auto;
-          max-width: 250px;
+          max-width: 400px;
           object-fit: contain;
         }
 
@@ -321,6 +321,11 @@ export default function Footer() {
             grid-template-columns: 1fr 2fr;
             align-items: start;
           }
+
+          .footer-logo-image {
+            height: 90px;
+            max-width: 450px;
+          }
         }
 
         @media (max-width: 768px) {
@@ -345,6 +350,11 @@ export default function Footer() {
 
           .cta-title {
             font-size: var(--font-size-xl);
+          }
+
+          .footer-logo-image {
+            height: 60px;
+            max-width: 300px;
           }
         }
       `}</style>
