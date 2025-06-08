@@ -185,9 +185,10 @@ export default function Hero() {
         .card-2 {
           top: 40%;
           right: 15%;
-          background: var(--bg-elevated);
+          background: oklch(0.9200 0 0);
           border: 1px solid var(--border-light);
           animation-delay: 2s;
+          color: var(--text-primary);
         }
 
         .card-3 {

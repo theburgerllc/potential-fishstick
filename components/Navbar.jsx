@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="container">
         <div className="nav-content">
           <Link href="/" className="logo">
-            <span>Burger Consulting</span>
+            <img src="/brand_logo.png" alt="Burger Consulting LLC" className="logo-image" />
           </Link>
 
           <div className="nav-links desktop">
@@ -85,24 +85,26 @@ export default function Navbar() {
           left: 0;
           right: 0;
           z-index: 1000;
-          background: rgba(255, 255, 255, 0.9);
+          background: transparent;
           backdrop-filter: blur(10px);
-          border-bottom: 1px solid var(--border-light);
+          border-bottom: 1px solid transparent;
           transition: var(--transition-medium);
         }
 
         .navbar.scrolled {
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid var(--border-light);
           box-shadow: var(--shadow-md);
         }
 
         :global(.dark) .navbar {
-          background: rgba(17, 24, 39, 0.9);
-          border-bottom-color: var(--border-light);
+          background: transparent;
+          border-bottom-color: transparent;
         }
 
         :global(.dark) .navbar.scrolled {
-          background: rgba(17, 24, 39, 0.95);
+          background: rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid var(--border-light);
         }
 
         .nav-content {
@@ -113,15 +115,21 @@ export default function Navbar() {
         }
 
         .logo {
-          font-size: var(--font-size-xl);
-          font-weight: 800;
-          color: var(--text-primary);
+          display: flex;
+          align-items: center;
           text-decoration: none;
           transition: var(--transition-fast);
         }
 
         .logo:hover {
-          color: var(--primary);
+          transform: scale(1.05);
+        }
+
+        .logo-image {
+          height: 40px;
+          width: auto;
+          max-width: 200px;
+          object-fit: contain;
         }
 
         .nav-links {

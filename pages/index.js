@@ -17,6 +17,7 @@ export default function Home() {
         <meta property="og:description" content="Transform your business with practical AI solutions. From automation to optimization, we deliver results that matter." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://burgerconsulting.com" />
+        <meta property="og:image" content="https://burgerconsulting.com/brand_logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Burger Consulting LLC - Where AI Meets NYC Hustle" />
         <meta name="twitter:description" content="Transform your business with practical AI solutions." />

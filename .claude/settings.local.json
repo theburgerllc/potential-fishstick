@@ -14,7 +14,9 @@
       "Bash(git fetch:*)",
       "Bash(git config:*)",
       "Bash(git checkout:*)",
-      "Bash(tar:*)"
+      "Bash(tar:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx update-browserslist-db@latest:*)"
     ],
     "deny": []
   }

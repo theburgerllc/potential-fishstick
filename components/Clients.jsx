@@ -221,6 +221,8 @@ export default function Clients() {
           padding: var(--space-2xl);
           border-radius: var(--radius-xl);
           transition: var(--transition-medium);
+          background: oklch(0.9200 0 0);
+          border: 1px solid var(--border-light);
         }
 
         .testimonial-card:hover {

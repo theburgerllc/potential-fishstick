@@ -112,6 +112,8 @@ export default function Services() {
           transition: var(--transition-medium);
           position: relative;
           overflow: hidden;
+          background: oklch(0.9200 0 0);
+          border: 1px solid var(--border-light);
         }
 
         .service-card::before {

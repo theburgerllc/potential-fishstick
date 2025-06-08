@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-brand">
             <Link href="/" className="footer-logo">
-              Burger Consulting
+              <img src="/brand_logo.png" alt="Burger Consulting LLC" className="footer-logo-image" />
             </Link>
             <p className="footer-tagline">
               NYC Born. AI Driven. Results Delivered.
@@ -145,9 +145,6 @@ export default function Footer() {
         }
 
         .footer-logo {
-          font-size: var(--font-size-2xl);
-          font-weight: 800;
-          color: var(--text-primary);
           text-decoration: none;
           display: block;
           margin-bottom: var(--space-md);
@@ -155,7 +152,14 @@ export default function Footer() {
         }
 
         .footer-logo:hover {
-          color: var(--primary);
+          transform: scale(1.05);
+        }
+
+        .footer-logo-image {
+          height: 50px;
+          width: auto;
+          max-width: 250px;
+          object-fit: contain;
         }
 
         .footer-tagline {
